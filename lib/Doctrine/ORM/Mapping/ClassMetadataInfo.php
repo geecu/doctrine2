@@ -568,7 +568,7 @@ class ClassMetadataInfo implements ClassMetadata
      */
     public function isIdentifier($fieldName)
     {
-        if ( ! $this->isIdentifierComposite) {
+        if ( ! $this->isIdentifierComposite && isset($this->identifier[0])) {
             return $fieldName === $this->identifier[0];
         }
         return in_array($fieldName, $this->identifier);
